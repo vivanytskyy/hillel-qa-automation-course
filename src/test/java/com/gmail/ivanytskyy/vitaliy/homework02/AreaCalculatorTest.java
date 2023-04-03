@@ -1,6 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.homework02;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -54,6 +55,12 @@ public class AreaCalculatorTest {
         areaCalculator.calculateRightTriangleArea(-1, 1);
     }
 
+    @Test(description = "Try to calculate area of the right triangle with NaN value of legs",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testRightTriangleAreaCalculationNaNValue(){
+        areaCalculator.calculateRightTriangleArea(Double.NaN, Double.NaN);
+    }
+
     @Test(description = "Calculate area of the circle with radius = 1m")
     public void testCircleAreaCalculation(){
         Assert.assertEquals(areaCalculator.calculateCircleArea(1), Math.PI);
@@ -81,5 +88,16 @@ public class AreaCalculatorTest {
             expectedExceptions = IllegalArgumentException.class)
     public void testCircleAreaCalculationNegativeRadiusValue(){
         areaCalculator.calculateCircleArea(-1);
+    }
+
+    @Test(description = "Try to calculate area of the circle with NaN radius value",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testCircleAreaCalculationNaNRadiusValue(){
+        areaCalculator.calculateCircleArea(Double.NaN);
+    }
+
+    @AfterTest
+    public void postCondition(){
+        areaCalculator = null;
     }
 }

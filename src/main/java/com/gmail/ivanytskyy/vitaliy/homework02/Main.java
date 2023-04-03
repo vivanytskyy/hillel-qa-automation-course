@@ -36,12 +36,11 @@ public class Main {
         double leg1 = 0.05;
         double leg2 = 0.078;
         double rightTriangleArea = areaCalculator.calculateRightTriangleArea(leg1, leg2);
-        //System.out.printf("Area of a right triangle: %.3f ㎡\n", rightTriangleArea);
-        System.out.println("Area of a right triangle: " + rightTriangleArea + " ㎡");
+        System.out.println("Area of the right triangle: " + rightTriangleArea + " ㎡");
 
         // Area of the circle (Task 3).
         double circleRadius = 0.55;
         double circleArea = areaCalculator.calculateCircleArea(circleRadius);
-        System.out.printf(Locale.ROOT, "Area of a circle: %.4f ㎡\n", circleArea);
+        System.out.printf(Locale.ROOT, "Area of the circle: %.4f ㎡\n", circleArea);
     }
 }

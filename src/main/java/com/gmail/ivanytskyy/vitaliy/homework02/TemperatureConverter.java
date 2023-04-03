@@ -1,8 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.homework02;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
 /**
  * @author Vitaliy Ivanytskyy
  */
@@ -20,35 +18,35 @@ public class TemperatureConverter {
     }
 
     public double convertCelsiusToKelvin(double celsiusValue){
-        if (celsiusValue < MIN_VALUE_OF_CELSIUS)
+        if (celsiusValue < MIN_VALUE_OF_CELSIUS || Double.isNaN(celsiusValue))
             throw new IllegalArgumentException(EXCEPTION_MESSAGE + celsiusValue);
         double resultAsDouble = celsiusValue + Math.abs(MIN_VALUE_OF_CELSIUS);
         return roundDoubleValue(resultAsDouble);
     }
 
     public double convertFahrenheitToCelsius(double fahrenheitValue){
-        if (fahrenheitValue < MIN_VALUE_OF_FAHRENHEIT)
+        if (fahrenheitValue < MIN_VALUE_OF_FAHRENHEIT || Double.isNaN(fahrenheitValue))
             throw new IllegalArgumentException(EXCEPTION_MESSAGE + fahrenheitValue);
         double resultAsDouble = (fahrenheitValue - 32) * 5 / 9;
         return roundDoubleValue(resultAsDouble);
     }
 
     public double convertFahrenheitToKelvin(double fahrenheitValue){
-        if (fahrenheitValue < MIN_VALUE_OF_FAHRENHEIT)
+        if (fahrenheitValue < MIN_VALUE_OF_FAHRENHEIT || Double.isNaN(fahrenheitValue))
             throw new IllegalArgumentException(EXCEPTION_MESSAGE + fahrenheitValue);
         double resultAsDouble = (fahrenheitValue - 32) * 5 / 9 + Math.abs(MIN_VALUE_OF_CELSIUS);
         return roundDoubleValue(resultAsDouble);
     }
 
     public double convertKelvinToCelsius(double kelvinValue){
-        if (kelvinValue < MIN_VALUE_OF_KELVIN)
+        if (kelvinValue < MIN_VALUE_OF_KELVIN || Double.isNaN(kelvinValue))
             throw new IllegalArgumentException(EXCEPTION_MESSAGE + kelvinValue);
         double resultAsDouble = kelvinValue - Math.abs(MIN_VALUE_OF_CELSIUS);
         return roundDoubleValue(resultAsDouble);
     }
 
     public double convertKelvinToFahrenheit(double kelvinValue){
-        if (kelvinValue < MIN_VALUE_OF_KELVIN)
+        if (kelvinValue < MIN_VALUE_OF_KELVIN || Double.isNaN(kelvinValue))
             throw new IllegalArgumentException(EXCEPTION_MESSAGE + kelvinValue);
         double resultAsDouble = (kelvinValue - Math.abs(MIN_VALUE_OF_CELSIUS)) * 9 / 5 + 32;
         return roundDoubleValue(resultAsDouble);

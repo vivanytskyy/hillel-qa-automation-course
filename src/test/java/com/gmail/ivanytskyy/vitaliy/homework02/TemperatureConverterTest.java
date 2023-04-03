@@ -44,6 +44,12 @@ public class TemperatureConverterTest {
         temperatureConverter.convertCelsiusToFahrenheit(-273.16);
     }
 
+    @Test(description = "Try to convert NaN value (as Celsius) to Fahrenheit",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testCelsiusToFahrenheitConversionNaNValue(){
+        temperatureConverter.convertCelsiusToFahrenheit(Double.NaN);
+    }
+
     @Test(description = "Convert 0 Celsius to Kelvin")
     public void testCelsiusToKelvinConversion(){
         Assert.assertEquals(temperatureConverter.convertCelsiusToKelvin(0), 273.15);
@@ -69,6 +75,12 @@ public class TemperatureConverterTest {
         Assert.assertEquals(temperatureConverter
                 .convertCelsiusToKelvin(TemperatureConverter.MIN_VALUE_OF_CELSIUS),
                 TemperatureConverter.MIN_VALUE_OF_KELVIN);
+    }
+
+    @Test(description = "Try to convert NaN value (as Celsius) to Kelvin",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testCelsiusToKelvinConversionNaNValue(){
+        temperatureConverter.convertCelsiusToKelvin(Double.NaN);
     }
 
     @Test(description = "Try to convert wrong Celsius value to Kelvin",
@@ -99,6 +111,12 @@ public class TemperatureConverterTest {
                 TemperatureConverter.MIN_VALUE_OF_CELSIUS);
     }
 
+    @Test(description = "Try to convert NaN value (as Fahrenheit) to Celsius",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testFahrenheitToCelsiusConversionNaNValue(){
+        temperatureConverter.convertFahrenheitToCelsius(Double.NaN);
+    }
+
     @Test(description = "Try to convert wrong Fahrenheit value to Celsius",
             expectedExceptions = IllegalArgumentException.class)
     public void testFahrenheitToCelsiusConversionLessThanMinValue(){
@@ -127,6 +145,12 @@ public class TemperatureConverterTest {
                 TemperatureConverter.MIN_VALUE_OF_KELVIN);
     }
 
+    @Test(description = "Try to convert NaN value (as Fahrenheit) to Kelvin",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testFahrenheitToKelvinConversionNaNValue(){
+        temperatureConverter.convertFahrenheitToKelvin(Double.NaN);
+    }
+
     @Test(description = "Try to convert wrong Fahrenheit value to Kelvin",
             expectedExceptions = IllegalArgumentException.class)
     public void testFahrenheitToKelvinConversionLessThanMinValue(){
@@ -150,6 +174,12 @@ public class TemperatureConverterTest {
                 TemperatureConverter.MIN_VALUE_OF_CELSIUS);
     }
 
+    @Test(description = "Try to convert NaN value (as Kelvin) to Celsius",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testKelvinToCelsiusConversionNaNValue(){
+        temperatureConverter.convertKelvinToCelsius(Double.NaN);
+    }
+
     @Test(description = "Try to convert wrong Kelvin value to Celsius",
             expectedExceptions = IllegalArgumentException.class)
     public void testKelvinToCelsiusConversionLessThanMinValue(){
@@ -171,6 +201,12 @@ public class TemperatureConverterTest {
         Assert.assertEquals(temperatureConverter
                 .convertKelvinToFahrenheit(TemperatureConverter.MIN_VALUE_OF_KELVIN),
                 TemperatureConverter.MIN_VALUE_OF_FAHRENHEIT);
+    }
+
+    @Test(description = "Try to convert NaN value (as Kelvin) to Fahrenheit",
+            expectedExceptions = IllegalArgumentException.class)
+    public void testKelvinToFahrenheitConversionNaNValue(){
+        temperatureConverter.convertKelvinToFahrenheit(Double.NaN);
     }
 
     @Test(description = "Try to convert wrong Kelvin value to Fahrenheit",
