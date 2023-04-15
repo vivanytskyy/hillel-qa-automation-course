@@ -1,5 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.homework04;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -34,11 +36,14 @@ public class TrivialTasks {
                 System.out.printf(labelFormat, " ");
                 System.out.println(line);
             }
+
             double sinValue = Math.sin(Math.toRadians(i));
+            // We can use BigDecimal for avoid unexpected results (for example: sin(360°) = -0.000 )
+            BigDecimal bd = BigDecimal.valueOf(sinValue).setScale(3, RoundingMode.HALF_UP);
             int xLength = (i == 0) ? 1 : (i < 100) ? 2 : 3;
-            int sinXLength = sinValue >= 0 ? 5 : 6;
+            int sinXLength = bd.doubleValue() >= 0 ? 5 : 6;
             String format = "|%1$7s%2$d%1$" + (8 - xLength) + "s|%1$5s%3$.3f%1$" + (11 - sinXLength) + "s|\n";
-            System.out.printf(format, " ", i, sinValue);
+            System.out.printf(format, " ", i, bd.doubleValue());
             System.out.println(line);
         }
 
