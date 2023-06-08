@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-import java.util.List;
 
 /*
  * Task 1
@@ -102,10 +101,9 @@ public class ChallengingDomTest {
         WebElement headElement = webDriver.findElement(By.xpath("//table/thead/tr[1]/th[4]"));
         System.out.println(headElement.getText());
         System.out.println("-".repeat(11));
-        List<WebElement> tableBody = webDriver.findElements(By.xpath("//table/tbody/tr"));
-        for(int i = 1; i <= tableBody.size(); i++){
-            WebElement element = webDriver.findElement(By.xpath(String.format("//table/tbody/tr[%s]/td[4]", i)));
-            System.out.println(element.getText());
-        }
+        webDriver.findElements(By.xpath("//table/tbody/tr/td[4]"))
+                .stream()
+                .map(WebElement::getText)
+                .forEach(System.out::println);
     }
 }
