@@ -1,7 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1" >
-    <test name="homework12" enabled="true" >
+    <test name="homework13" enabled="true" >
         <!-- available browsers: chrome, firefox -->
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.gmail.ivanytskyy.vitaliy.wd.homework13.DragAndDropTest"/>
+            <class name="com.gmail.ivanytskyy.vitaliy.wd.homework13.HoverMenuTest"/>
+            <class name="com.gmail.ivanytskyy.vitaliy.wd.homework13.UserNameFinderTest"/>
+        </classes>
+    </test>
+    <test name="homework12" enabled="false" >
+    <!-- available browsers: chrome, firefox -->
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.gmail.ivanytskyy.vitaliy.wd.homework12.ChallengingDomTest"/>
