@@ -1,5 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
+import com.gmail.ivanytskyy.vitaliy.utils.DriverHolder;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +19,8 @@ public class BasePage {
     protected WebDriverWait webDriverWait;
     protected Actions actions;
     protected JavascriptExecutor javascriptExecutor;
-    public BasePage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+    public BasePage() {
+        this.webDriver = DriverHolder.getInstance().getWebDriver();
         this.webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         this.actions = new Actions(webDriver);
         this.javascriptExecutor = (JavascriptExecutor) webDriver;

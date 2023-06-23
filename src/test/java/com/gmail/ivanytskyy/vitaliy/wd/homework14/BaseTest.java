@@ -1,6 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.wd.homework14;
 
 import com.gmail.ivanytskyy.vitaliy.pages.homework14.MainPage;
+import com.gmail.ivanytskyy.vitaliy.utils.DriverHolder;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +31,7 @@ public class BaseTest {
             throw new IllegalArgumentException("Incorrect browser name");
         }
         webDriver.manage().window().maximize();
+        DriverHolder.getInstance().setWebDriver(webDriver);
     }
     @AfterClass(alwaysRun = true)
     public void afterClass(){
@@ -39,6 +41,6 @@ public class BaseTest {
     }
     protected MainPage openApp(){
         webDriver.get(MAIN_PAGE_URL);
-        return new MainPage(webDriver);
+        return new MainPage();
     }
 }

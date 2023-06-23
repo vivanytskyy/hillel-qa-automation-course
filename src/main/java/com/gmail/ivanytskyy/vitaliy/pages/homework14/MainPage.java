@@ -1,6 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,24 +24,23 @@ public class MainPage extends BasePage{
     private WebElement challengingDomPage;
     @FindBy(linkText = "Form Authentication")
     private WebElement formAuthenticationPage;
-    public MainPage(WebDriver webDriver) {
-        super(webDriver);
+    public MainPage() {
         PageFactory.initElements(webDriver, this);
     }
     public LoginPage openFormAuthenticationPage(){
         formAuthenticationPage.click();
-        return new LoginPage(webDriver);
+        return new LoginPage();
     }
     public CheckboxesPage openCheckboxesPage(){
         checkboxesPage.click();
-        return new CheckboxesPage(webDriver);
+        return new CheckboxesPage();
     }
     public HoversPage openHoversPage(){
         hoversPage.click();
-        return new HoversPage(webDriver);
+        return new HoversPage();
     }
     public ChallengingDomPage openChallengingDomPage(){
         challengingDomPage.click();
-        return new ChallengingDomPage(webDriver);
+        return new ChallengingDomPage();
     }
 }

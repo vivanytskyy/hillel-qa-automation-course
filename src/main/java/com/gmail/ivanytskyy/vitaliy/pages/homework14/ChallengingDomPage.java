@@ -1,6 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,8 +21,7 @@ public class ChallengingDomPage extends BasePage{
     @FindBy(xpath = "//table/tbody/tr/td[4]")
     private List<WebElement> fourthColumOfTable;
 
-    public ChallengingDomPage(WebDriver webDriver) {
-        super(webDriver);
+    public ChallengingDomPage() {
         PageFactory.initElements(webDriver, this);
     }
     public ChallengingDomPage clickButton1(){

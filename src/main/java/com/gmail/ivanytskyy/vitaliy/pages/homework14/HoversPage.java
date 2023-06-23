@@ -1,6 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,8 +23,7 @@ public class HoversPage extends BasePage{
     @FindBy(xpath = "//div[@class='figure'][3]/div[@class='figcaption']/h5")
     private WebElement user3Heading;
 
-    public HoversPage(WebDriver webDriver) {
-        super(webDriver);
+    public HoversPage() {
         PageFactory.initElements(webDriver, this);
     }
     public String getNameUser1(){

@@ -1,6 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,8 +15,7 @@ public class CheckboxesPage extends BasePage{
     @FindBy(xpath = "//form/input[2]")
     private WebElement checkbox2;
 
-    public CheckboxesPage(WebDriver webDriver) {
-        super(webDriver);
+    public CheckboxesPage() {
         PageFactory.initElements(webDriver, this);
     }
     public CheckboxesPage selectCheckbox1(){
