@@ -1,6 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.pages.homework14;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,8 +19,7 @@ public class LoginPage extends BasePage{
     @FindBy(css = ".flash.error")
     private WebElement errorPopup;
 
-    public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+    public LoginPage() {
         PageFactory.initElements(webDriver, this);
     }
     public LoginPage setUsername(String username){
@@ -34,11 +32,11 @@ public class LoginPage extends BasePage{
     }
     public SecureAreaPage clickLoginButtonPositiveCase(){
         clickButton(loginButton);
-        return new SecureAreaPage(webDriver);
+        return new SecureAreaPage();
     }
     public LoginPage clickLoginButtonNegativeCase(){
         clickButton(loginButton);
-        return this;
+        return new LoginPage();
     }
     public SecureAreaPage loginPositiveCase(String username, String password){
         return setUsername(username).setPassword(password).clickLoginButtonPositiveCase();
