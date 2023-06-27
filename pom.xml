@@ -19,6 +19,7 @@
     <selenium-java.version>4.9.1</selenium-java.version>
     <webdrivermanager.version>5.3.3</webdrivermanager.version>
     <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
+    <selenide.version>6.15.0</selenide.version>
   </properties>
 
   <dependencies>
@@ -47,6 +48,11 @@
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>${webdrivermanager.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.codeborne</groupId>
+      <artifactId>selenide</artifactId>
+      <version>${selenide.version}</version>
     </dependency>
   </dependencies>
 
