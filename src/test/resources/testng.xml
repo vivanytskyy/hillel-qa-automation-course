@@ -1,6 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1">
-    <test name="homework16" enabled="true">
+    <test name="homework17" enabled="true">
+        <classes>
+            <class name="com.gmail.ivanytskyy.vitaliy.rest.homework17.PetTest"/>
+            <class name="com.gmail.ivanytskyy.vitaliy.rest.homework17.StoreTest"/>
+            <class name="com.gmail.ivanytskyy.vitaliy.rest.homework17.UserTest"/>
+        </classes>
+    </test>
+    <test name="homework16" enabled="false">
         <!-- available browsers: chrome, firefox -->
         <parameter name="browser" value="chrome"/>
         <classes>
