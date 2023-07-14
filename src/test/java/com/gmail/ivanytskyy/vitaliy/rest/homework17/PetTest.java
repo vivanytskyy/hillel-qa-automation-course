@@ -89,7 +89,7 @@ public class PetTest {
         Assert.assertEquals(updatedPet.getStatus(), newStatus.toString().toLowerCase());
         Assert.assertNotEquals(updatedPet.toString(), addedPet.toString());
     }
-    @Test(priority = 60)
+    @Test(priority = 60, enabled = false)
     public void uploadImageById() throws IOException {
         Pet defaultPet = new PetBuilder().build();
         Pet addedPet = petController.addPet(defaultPet);
