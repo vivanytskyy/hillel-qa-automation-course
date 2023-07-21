@@ -1,5 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.wd.homework14;
 
+import com.gmail.ivanytskyy.vitaliy.listeners.CustomExtentReportsListener;
 import com.gmail.ivanytskyy.vitaliy.pages.homework14.MainPage;
 import com.gmail.ivanytskyy.vitaliy.utils.DriverHolder;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 /**
@@ -15,6 +17,7 @@ import org.testng.annotations.Parameters;
  * @version 1.00
  * @date 15/06/2023
  */
+@Listeners({CustomExtentReportsListener.class})
 public class BaseTest {
     protected WebDriver webDriver;
     private static final String MAIN_PAGE_URL = "https://the-internet.herokuapp.com";
